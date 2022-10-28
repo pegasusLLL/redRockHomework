@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lv2</title>
+</head>
+<style>
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .a {
+
+        width: 525px;
+        height: 655px;
+        box-shadow: 0px 0px 5px 5px rgba(222, 225, 230, .2);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .a:hover {
+        animation: move1 .5s linear forwards;
+
+
+    }
+
+    .a img:hover {
+        animation: move .5s linear forwards;
+    }
+
+    @keyframes move {
+        0% {
+            transform: scale(1);
+        }
+
+        100% {
+            transform: scale(1.1);
+        }
+
+
+    }
+
+    @keyframes move1 {
+        0% {
+            transform: scale(1);
+            box-shadow: 0px 0px 5px 5px rgba(222, 225, 230, .2);
+        }
+
+        100% {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 10px 10px rgba(222, 225, 230, .3)
+        }
+
+
+    }
+
+
+    .a img {
+        width: 525px;
+        height: 290px;
+        border-radius: 8px 8px 0px 0px
+    }
+
+    .a h2,
+    h4 {
+        margin: 26px 20px;
+    }
+
+    .a h4 {
+        font-weight: normal;
+        color: #5a576c;
+    }
+
+    .a p {
+        margin: 4px 20px;
+        text-indent: 2em;
+        color: #888386;
+    }
+
+    .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 196px;
+        height: 52px;
+        margin: 28px 165px;
+        border-radius: 26px;
+        background-color: #6ea1d5;
+    }
+
+    .button:hover {
+        background-color: #1d4fc0;
+    }
+
+    .button div {
+
+        display: inline-block;
+
+        font-size: 20px;
+        color: white;
+    }
+</style>
+
+<body>
+    <div class="a">
+        <div>
+            <img src="image/lv2.jpeg" </div>
+        </div>
+        <div>
+            <h2>前端研发部</h2>
+            <h4>将想法画成现实, 让数据激发可能</h4>
+            <p> 我们是想法的实现者, 在这里, 你可以把你天马行空的画出绚丽的光景;
+                在这里, 你亦可以利用身边的工具 (nodejs, ts, react等) 让数据激发无限潜能,
+                创造属于自己的一万种可能。 加入我们， 一起去前端的世界探索未知!
+
+            </p>
+        </div>
+        <div class="button">
+            <div>
+                加入我们
+            </div>
+        </div>
+</body>
+
+</html>
