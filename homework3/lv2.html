@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用两种方式实现数组扁平化</title>
+</head>
+<script>
+// 法一 递归
+let arrr = [1,[2,3,[3,4,5]],[3,8],[5,7]];
+    function flaten(item) {
+        let Array1 = [];
+        for (let i = 0; i < item.length; i++) {
+            if (Array.isArray(item[i])==1) {
+                Array1 = Array1.concat(flaten(item[i]));
+            }
+
+            else {
+                Array1.push(item[i]);
+            }
+
+        }
+        return Array1;
+    }
+// 错误记录 let i=0 开始写为 i = 0 在非严格模式下，JavaScript 允许不声明变量就直接为其赋值，这是因为 JavaScript 解释器能够自动隐式声明变量。隐式声明的变量总是作为全局变量使用。
+console.log(flaten(arrr));
+// 法二 使用数组tostring方法将数组扁平化 
+let arr = [1,[2,3],[4,5,[6,7,8]],9,10,[2]];
+function flattenn(arr) {
+
+    return arr.toString().split(',');
+    
+}
+console.log(flattenn(arr));
+
+</script>
+
+<body>
+
+</body>
+
+</html>
