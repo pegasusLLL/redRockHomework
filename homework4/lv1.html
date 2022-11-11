@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lv1</title>
+</head>
+<script>
+    //循环
+    function sumTO(n) {
+        let sum = 0;
+        for (let i = 0; i <= n; i++) {
+
+            sum = sum + i;
+
+        }
+        return sum;
+    }
+    sum = sumTO(10);
+    console.log(sum);
+
+    //递归
+    function SUMTO(n) {
+        let sum = 1;
+        if (n == 1) return 1;
+        else return n + SUMTO(n - 1)
+    }
+
+result = SUMTO(12);
+console.log(result);
+
+</script>
+
+<body>
+
+</body>
+
+</html>
