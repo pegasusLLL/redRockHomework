@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lv1-2</title>
+</head>
+
+<style>
+    .a {
+        /* position: absolute; */
+        left: 0;
+        top: 0;
+        background-color: skyblue;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        transition: ease 2s;
+    }
+
+    .b {
+        /* position: absolute; */
+        left: 0;
+        top: 300px;
+        background-color: red;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        transition: ease 2s;
+    }
+
+    .c {
+        /* position: absolute; */
+        left: 0px;
+        top: 600px;
+        background-color: black;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        transition: ease 2s;
+    }
+
+    .right {
+
+
+        transform: translateX(500px);
+    }
+</style>
+
+<body>
+    <div class="a" id="one"></div>
+    <div class="b" id="two"></div>
+    <div class="c" id="three"></div>
+</body>
+<script>
+
+    let circles = document.querySelectorAll("div")
+
+
+
+    new Promise((resolve) => {
+        setTimeout(() => {
+            circles[0].classList.add("right")
+
+            resolve(1)
+        }, 2000)
+
+    }
+    ).then((res) => {
+
+        return new Promise((resolve) => {
+
+            setTimeout(() => {
+                circles[res].classList.add("right")
+
+                resolve(2)
+            }, 2000)
+
+
+        })
+
+
+
+
+
+
+    }).then((res) => {
+        setTimeout(() => {circles[res].classList.add("right")}, 2000)
+
+
+    }
+
+    )
+</script>
+
+</html>
