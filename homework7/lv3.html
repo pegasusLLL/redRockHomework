@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lv3</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const xhr = new XMLHttpRequest();
+    xhr.open("get", "https://taskapi.chovrio.club/chatroom");  
+    xhr.setRequestHeader("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ODIsInVzZXJuYW1lIjoiZGFsYW8iLCJhdmF0YXIiOiIiLCJpYXQiOjE2NzA0MzI1NDEsImV4cCI6MTY3MzAyNDU0MX0.KPpJELZ63v0I02kZE9rhYMkq3N8u4MtNL0sxr5XsSN8");   
+    xhr.send();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            console.log(xhr.responseText)
+        }
+    }    
+</script>
+
+</html>
