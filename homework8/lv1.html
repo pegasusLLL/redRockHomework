@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lv1</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+
+    function sum(a, b) {
+        return a + b;
+    }
+    //call的模拟实现
+    Function.prototype.myCall = function (mythis, ...args) {
+        let fn = this;
+        mythis = (mythis == undefined || mythis == null) ? window : Object(mythis);
+        mythis.fn = fn;
+        // mythis.fn();
+        let result = mythis.fn(...args);
+        delete mythis.fn;
+        return result;
+    }
+
+
+
+    //call的模拟实现
+    Function.prototype.myApply = function (mythis, args) {
+
+        let fn = this;
+        mythis = (mythis == undefined || mythis == null) ? window : Object(mythis);
+        mythis.fn = fn;
+        args = args?args:[]
+        let result = mythis.fn(...args);
+        delete mythis.fn;
+        return result;
+
+    }
+    let rst = sum.myCall(1, 2, 3);
+    console.log(rst); 
+    let rst1 = sum.myApply(1,[1,2]);
+    console.log(rst1);
+</script>
+
+</html>
